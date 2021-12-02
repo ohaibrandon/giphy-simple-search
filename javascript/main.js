@@ -5,18 +5,18 @@ var term = document.querySelector("input").value;
 
 click.addEventListener("click", function(){
 	var input = document.querySelector("input").value;
-	stuffHappens(input);
+	fetchData(input);
 });
 
 enter.addEventListener("keyup", function(e){
 	var input = document.querySelector("input").value;
 	if(e.which === 13){
-		stuffHappens(input);
+		fetchData(input);
 	}
 });
 
-/* 2. do the data stuff with the API */
-function stuffHappens(query) {
+/* 2. Fetch data with the API */
+function fetchData(query) {
 	cont.innerHTML = "";
 	var url = "http://api.giphy.com/v1/gifs/search?q=" + query + "&api_key=IfiEfoPCMex7dl3VtoissHiDpbvxbQN1";
 	var xhr = new XMLHttpRequest();
@@ -30,7 +30,7 @@ function stuffHappens(query) {
 }
 
 
-/* 3. Show me the GIFs */
+/* 3. Show GIFs */
 var cont = document.querySelector(".js-container");
 
 function pushToDOM(input) {
